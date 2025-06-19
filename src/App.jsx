@@ -13,6 +13,7 @@ import GamingZone from './pages/GamingZone';
 import About from './Components/About';
 import Features from './Components/Features';
 
+import './index.css'; 
 
 
 function App() {
@@ -48,7 +49,7 @@ function App() {
      <GamingZone/>
       <About />
       <Features />
-     
+     <Footer/>
        </main>
           
           }

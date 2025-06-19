@@ -11,18 +11,31 @@ const FeaturesSection = () => (
     <div className="container px-4 mx-auto">
       <h2 className="text-3xl font-bold text-center mb-16">Our Features</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <FeatureCard 
-          title="Feature One" 
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit." 
-        />
-        <FeatureCard 
-          title="Feature Two" 
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit." 
-        />
-        <FeatureCard 
-          title="Feature Three" 
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit." 
-        />
+       <FeatureCard 
+  title="Player Authentication" 
+  description="Secure login with email or OTP—your in-game identity and stats are always protected with encrypted credentials." 
+/>
+<FeatureCard 
+  title="AI Matchmaking" 
+  description="Smart, AI-driven recommendations for new games, friends, or tournaments tailored to your playstyle and achievements." 
+/>
+<FeatureCard 
+  title="Live Game Alerts" 
+  description="Get real-time notifications for match invites, leaderboard updates, and exclusive in-game events—never miss a moment!" 
+/>
+<FeatureCard 
+  title="Cross-Platform Play" 
+  description="Seamless gaming experience optimized for PC, console, and mobile—play anywhere, anytime, with responsive design." 
+/>
+<FeatureCard 
+  title="Game Master Console" 
+  description="A powerful admin dashboard to manage players, tournaments, leaderboards, and in-game content with ease." 
+/>
+<FeatureCard 
+  title="Player Analytics" 
+  description="Track your progress, stats, and achievements with interactive charts—level up your gameplay with actionable insights." 
+/>
+
       </div>
     </div>
   </section>

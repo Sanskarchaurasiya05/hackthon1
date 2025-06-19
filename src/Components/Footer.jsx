@@ -6,7 +6,7 @@ const Footer = () => (
   >
     <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div className="mb-4 md:mb-0">
-        <h3 className="text-xl font-bold">BrandName</h3>
+        <h3 className="text-xl font-bold">Journey</h3>
         <p className="mt-2 text-gray-400">© 2025 All rights reserved</p>
       </div>
       <div className="flex space-x-6 mb-4 md:mb-0">
