@@ -2,21 +2,53 @@ import { Parallax } from 'react-scroll-parallax';
 
 const services = [
   {
-    icon: "💡",
-    title: "Innovative Ideas",
-    desc: "We bring creative solutions to your business challenges.",
+    icon: "🎮",
+    title: "Immersive Gameplay",
+    desc: "Experience cutting-edge graphics and dynamic worlds that keep you engaged for hours.",
   },
   {
-    icon: "🚀",
-    title: "Fast Delivery",
-    desc: "Quick turnaround without compromising on quality.",
+    icon: "🧑‍🤝‍🧑",
+    title: "Multiplayer Modes",
+    desc: "Team up or compete with friends and players worldwide in real-time battles and co-op missions.",
   },
   {
-    icon: "🤝",
-    title: "Trusted Support",
-    desc: "Our team is here for you 24/7, every step of the way.",
+    icon: "🏆",
+    title: "Leaderboards & Rewards",
+    desc: "Climb the global rankings and earn exclusive in-game rewards for your achievements.",
   },
+  {
+    icon: "🌐",
+    title: "Cross-Platform Play",
+    desc: "Seamlessly connect and play with others across PC, console, and mobile devices for a unified experience.",
+  },
+  {
+    icon: "🔒",
+    title: "Secure & Fair Gaming",
+    desc: "Advanced encryption, anti-cheat, and user verification keep gameplay secure and fair for everyone.",
+  },
+  {
+    icon: "💬",
+    title: "Community & Social Features",
+    desc: "Build your profile, connect with friends, join guilds, and share your best moments with the gaming community.",
+  },
+  {
+    icon: "🕹️",
+    title: "Game Variety",
+    desc: "Choose from a vast library of genres: action, strategy, adventure, puzzles, and more—something for every gamer.",
+  },
+  {
+    icon: "📊",
+    title: "Player Analytics",
+    desc: "Track your stats, monitor progress, and get personalized insights to level up your gameplay.",
+  },
+  {
+    icon: "♿",
+    title: "Accessibility Options",
+    desc: "Customizable controls, colorblind modes, and adaptive difficulty ensure everyone can enjoy the game.",
+  },
+ 
 ];
+
 
 const AboutSection = () => (
   <section
@@ -29,7 +61,7 @@ const AboutSection = () => (
     </Parallax>
     {/* Section Content */}
     <div className="relative z-10 container mx-auto px-4">
-      <h2 className="text-3xl font-bold text-center mb-12">What We Do</h2>
+      <h2 className="text-3xl font-bold text-center mb-12">Why Gamers Choose Us</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {services.map((s, i) => (
           <Parallax key={i} speed={5 + i * 2}>

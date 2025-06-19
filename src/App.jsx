@@ -14,6 +14,7 @@ import About from './Components/About';
 import Features from './Components/Features';
 
 import './index.css'; 
+import AboutD from './Components/AboutD';
 
 
 function App() {
@@ -29,9 +30,13 @@ function App() {
 
   return (
     <Router>
+
+   
+
       <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <Navbar />
         <Routes>
+          <Route path="/aboutD" element={<AboutD />} />
           <Route
             path="/"
             element={
@@ -52,6 +57,8 @@ function App() {
      <Footer/>
        </main>
           
+
+
           }
           />
         </Routes>
