@@ -15,6 +15,8 @@ import Features from './Components/Features';
 
 import './index.css'; 
 import AboutD from './Components/AboutD';
+import Footerg from './Components/Footerg';
+import Contact from './Components/Contact';
 
 
 function App() {
@@ -54,7 +56,8 @@ function App() {
      <GamingZone/>
       <About />
       <Features />
-     <Footer/>
+      <Contact/>
+     <Footerg/>
        </main>
           
 
