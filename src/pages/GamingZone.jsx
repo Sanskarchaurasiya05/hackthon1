@@ -49,9 +49,15 @@ const GamingZone = () => {
     () => {
       if (hasClicked && nextVdRef.current) {
         gsap.set("#next-video", { visibility: "visible" });
-        nextVdRef.current.muted = false; // Ensure unmuted before play
+
+        nextVdRef.current.muted = isMuted;
         nextVdRef.current.currentTime = 0;
-        nextVdRef.current.play().catch((e) => console.log("Play blocked:", e));
+
+        nextVdRef.current.oncanplaythrough = () => {
+          nextVdRef.current.play().catch((e) =>
+            console.warn("Play blocked:", e)
+          );
+        };
 
         gsap.to("#next-video", {
           scale: 1,
@@ -69,7 +75,7 @@ const GamingZone = () => {
       }
     },
     {
-      dependencies: [currentIndex, hasClicked],
+      dependencies: [currentIndex, hasClicked, isMuted],
       revertOnUpdate: true,
     }
   );
@@ -107,8 +113,12 @@ const GamingZone = () => {
         </div>
       )}
 
-      <div id="video-frame" className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75">
+      <div
+        id="video-frame"
+        className="relative z-10 h-dvh w-screen overflow-hidden rounded-lg bg-blue-75"
+      >
         <div>
+          {/* Mini preview video */}
           <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg">
             <VideoPreview>
               <div
@@ -127,7 +137,7 @@ const GamingZone = () => {
             </VideoPreview>
           </div>
 
-          {/* Main video with audio */}
+          {/* Main video with sound */}
           <video
             ref={nextVdRef}
             src={getVideoSrc(currentIndex)}
@@ -137,12 +147,14 @@ const GamingZone = () => {
             onLoadedData={handleVideoLoad}
             muted={isMuted}
             controls={hasClicked}
-            autoPlay={false}
+            autoPlay
           />
 
-          {/* Background video always muted */}
+          {/* Background muted video */}
           <video
-            src={getVideoSrc(currentIndex === totalVideos - 1 ? 1 : currentIndex)}
+            src={getVideoSrc(
+              currentIndex === totalVideos - 1 ? 1 : currentIndex
+            )}
             autoPlay
             loop
             muted
@@ -151,7 +163,7 @@ const GamingZone = () => {
           />
         </div>
 
-        {/* Mute/Unmute Button */}
+        {/* Mute toggle */}
         {hasClicked && (
           <button
             onClick={handleMuteToggle}
@@ -161,13 +173,17 @@ const GamingZone = () => {
           </button>
         )}
 
+        {/* Heading */}
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
           G<b>A</b>MING
         </h1>
 
+        {/* Text & Button */}
         <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
-            <h1 className="special-font hero-heading text-blue-100">redefi<b>n</b>e</h1>
+            <h1 className="special-font hero-heading text-blue-100">
+              redefi<b>n</b>e
+            </h1>
             <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
               Enter the Metagame Layer <br /> Unleash the Play Economy
             </p>
@@ -181,6 +197,7 @@ const GamingZone = () => {
         </div>
       </div>
 
+      {/* Fallback heading */}
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
         G<b>A</b>MING
       </h1>
